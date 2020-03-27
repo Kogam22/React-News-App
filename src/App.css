@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+html {
+    box-sizing: border-box;
+  }
+  
+body {
+  margin-top: 80px;
+  background-color: rgb(185, 215, 255);
 }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /* The News-Articles Container */
+  .News-Articles {
+    margin: 2em 2em;
+    column-gap: 1.5em;
+  }
+  
+  /* News-Articles on large screens */
+  @media only screen and (min-width: 1024px) {
+    .News-Articles {
+      column-count: 4;
+    }
+  }
+  
+  /* News-Articles on medium-sized screens */
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .News-Articles {
+      column-count: 3;
+    }
+  }
+  
+  /* News-Articles on small screens */
+  @media only screen and (max-width: 767px) and (min-width: 540px) {
+    .News-Articles {
+      column-count: 2;
+    }
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* body {
+  background-color: #cccccc;
+  color: #333333;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.News-Wrapper {
+  padding: 1.5em;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.News-Articles {
+  columns: 1;
+  column-gap: 10px;
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .News-Articles {
+    columns: 2;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 1024px) {
+  .News-Articles {
+    columns: 3;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
+} */
+  
