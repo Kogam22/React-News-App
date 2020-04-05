@@ -3,7 +3,7 @@ html {
   }
   
 body {
-  margin-top: 80px;
+  /* margin-top: 80px; */
   background-color: rgb(185, 215, 255);
 }
   *,
@@ -19,14 +19,14 @@ body {
   }
   
   /* News-Articles on large screens */
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1131px) {
     .News-Articles {
       column-count: 4;
     }
   }
   
   /* News-Articles on medium-sized screens */
-  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+  @media only screen and (max-width: 1130px) and (min-width: 768px) {
     .News-Articles {
       column-count: 3;
     }

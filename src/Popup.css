@@ -1,0 +1,69 @@
+.Popup {
+   /* display: none; Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 300px; 
+  /* Location of the box */
+  margin: auto;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  /* filter: blur(4px); */
+}
+
+.Popup-Content {
+    border-radius: 8px;
+    background-color: #fefefe;
+    margin:  0 auto;
+    border: 1px solid #888;
+    width: 270px;
+    padding: 20px;
+}
+
+/* .Popup-Content {
+    animation: fadeIn ease .5s;
+    -webkit-animation: fadeIn ease 10s;
+    -moz-animation: fadeIn ease 10s;
+    -o-animation: fadeIn ease 10s;
+    -ms-animation: fadeIn ease 10s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+} */
+
+.Popup-Select {
+    padding: 5px;
+}
+
+.Popup-Select-Drop {
+    margin-left: 10px;
+    float: right;
+}
+
+.Popup-Close {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.Popup-Close-Button {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    transition: all .2s ease-in;
+}
+
+.Popup-Close-Button:hover {
+    color: chartreuse;
+    border: 2px solid chartreuse;
+    cursor: pointer;
+}
