@@ -25,7 +25,7 @@ async function fetchNews(params, query, pageSize, api) {
 }
 
 export default function App() {
-  const [params, setParams] = useState({ country: "in", category: "business" });
+  const [params, setParams] = useState({ country: "us", category: "business" });
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [firstTime, setFirstTime] = useState(get("firstTime").then(val => setFirstTime(val)));
