@@ -29,7 +29,7 @@
 }
 
 .Navbar a:hover,
-.Dropdown:hover .dropbtn {
+.Dropdown:hover .dropbtn:hover {
   background-color: red;
 }
 
@@ -43,12 +43,17 @@
 }
 
 .Dropdown-Content label {
+  overflow: auto;
   float: none;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
+}
+
+.Dropdown-Content label:hover {
+  background-color: darkgray;
 }
 
 .Dropdown-Content a:hover {
