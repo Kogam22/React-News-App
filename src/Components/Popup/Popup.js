@@ -23,9 +23,11 @@ function Popup(props) {
       country === props.params.country
     ) {
       props.setFirstTime(false);
+      props.setFirstCookie();
       return null;
     } else {
       props.setFirstTime(false);
+      props.setFirstCookie();
       props.setParams({ country: country, category: category });
     }
   };

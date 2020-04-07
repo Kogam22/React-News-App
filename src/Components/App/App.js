@@ -1,5 +1,5 @@
 import React from "react";
-import { get, set, keys} from "idb-keyval";
+import { get, set} from "idb-keyval";
 
 import Card from "../Card/Card";
 import Error from "../Error/Error";
@@ -28,8 +28,7 @@ export default function App() {
   const [params, setParams] = useState({ country: "in", category: "business" });
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
-  const [firstTime, setFirstTime] = useState(get("firstTime").then(x => x));
-  console.log("1 firstTime", firstTime);
+  const [firstTime, setFirstTime] = useState(get("firstTime").then(val => setFirstTime(val)));
   const [news, setNews] = useState([]);
   const [errorStatus, setErrorStatus] = useState(false);
   const [errorInfo, setErrorInfo] = useState({});
@@ -102,11 +101,10 @@ export default function App() {
     "health",
   ];
 
-    if (firstTime === undefined || firstTime === false) {
-      set("firstTime", "true");
-      keys().then((keys) => console.log(keys));
-      get("firstTime").then(d => console.log(d));
-    }
+  if (firstTime === undefined) {
+    setFirstTime(true);
+    set("firstTime", true);
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -127,14 +125,12 @@ export default function App() {
         setErrorInfo(news.err);
         setLoading(false);
       }
-    })();
-
-    
+    })();    
   }, [params, api, query]);
-
-  useEffect(() => {
+  
+  function setFirstCookie() {
     set("firstTime", false);
-  }, [firstTime]);
+  }
 
   return (
     <div>
@@ -145,6 +141,7 @@ export default function App() {
           categories={categories}
           params={params}
           setParams={setParams}
+          setFirstCookie={setFirstCookie}
         />
       )}
       <Header
