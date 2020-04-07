@@ -1,5 +1,5 @@
 import React from "react";
-import { get, set} from "idb-keyval";
+import { get, set } from "idb-keyval";
 
 import Card from "../Card/Card";
 import Error from "../Error/Error";
@@ -28,7 +28,9 @@ export default function App() {
   const [params, setParams] = useState({ country: "us", category: "business" });
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
-  const [firstTime, setFirstTime] = useState(get("firstTime").then(val => setFirstTime(val)));
+  const [firstTime, setFirstTime] = useState(
+    get("firstTime").then((val) => setFirstTime(val))
+  );
   const [news, setNews] = useState([]);
   const [errorStatus, setErrorStatus] = useState(false);
   const [errorInfo, setErrorInfo] = useState({});
@@ -125,9 +127,9 @@ export default function App() {
         setErrorInfo(news.err);
         setLoading(false);
       }
-    })();    
+    })();
   }, [params, api, query]);
-  
+
   function setFirstCookie() {
     set("firstTime", false);
   }
@@ -152,21 +154,20 @@ export default function App() {
         countries={countries}
         categories={categories}
       />
-      {!firstTime && 
-        <div className="News-Wrapper">
-          <div className="News-Articles">
-            {loading ? (
-              <h1>Loading ... </h1>
-            ) : errorStatus ? (
-              <Error {...errorInfo} />
-            ) : (
-              news.map((item, index) => {
+      {!firstTime &&
+        (loading ? (
+          <h1>Loading ... </h1>
+        ) : errorStatus ? (
+          <Error {...errorInfo} />
+        ) : (
+          <div className="News-Wrapper">
+            <div className="News-Articles">
+              {news.map((item, index) => {
                 return <Card key={index} data={item} />;
-              })
-            )}
+              })}
+            </div>
           </div>
-        </div>
-      }
+        ))}
     </div>
   );
 }
